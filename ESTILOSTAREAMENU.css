@@ -420,9 +420,9 @@ body {
 
 .PlatoMitad{
  
-    height: 800px;
-    width: 400px;
-    top: 8%;
+    height: 600px;
+    width: 200px;
+    top: 5%;
     left: 0;
     flex: 1;
     display: flex;
@@ -604,6 +604,7 @@ body {
 .enlaces-legales a:hover {
     text-decoration: underline; /* Subrayar cuando colocamos el cursor sobre el enlace */
 }
+
 
 
 
