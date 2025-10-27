@@ -1,0 +1,625 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+
+.contenedor-principal {
+    scroll-snap-type: y mandatory;
+
+    /* OBLIGATORIO: Le da la altura de la ventana y permite scroll */
+    height: 100vh;
+    overflow-y: scroll; 
+}
+
+.pantalla {
+    height: 100vh;
+    width: 100%;
+
+    scroll-snap-align: start;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 60px; /* Espacio interno */
+    position: relative; /* Para posicionar elementos internos */
+}
+
+/* --- 2. Estilos Comunes (Botones, Títulos, Fondos) --- */
+
+.seccion-oscura {
+    background-color: #5f60b3; /* Morado principal */
+    color: white;
+    height: 50vh;
+}
+.seccion-oscura .descripcion-oscura,
+.seccion-oscura .titulo-seccion,
+.seccion-oscura .titulo-script {
+    color: white; /* Asegura que el texto sea blanco en fondos oscuros */
+}
+
+.boton {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+.boton:hover {
+    transform: scale(1.05);
+}
+.boton-rojo {
+    background-color: #d93a3e;
+}
+.boton-morado {
+    background-color: #5b4a9a;
+}
+
+/* Contenedor flexible para alinear en 2 columnas */
+.contenido-flexible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    gap: 40px;
+}
+
+.columna-texto {
+    flex: 1;
+    max-width: 450px;
+}
+
+.columna-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+.columna-imagen img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Títulos */
+.titulo-script {
+    font-family: 'Dancing Script', cursive;
+    font-size: 800%;
+    font-weight: 700;
+    color: #5b4a9a; 
+    line-height: 1;
+}
+.titulo-script.grande {
+    font-size: 80px;
+}
+
+.subtitulo-titulo {
+    font-size: 400%;
+    font-weight: 700;
+    color: #333;
+    display: block;
+    margin-top: -20px;
+}
+.descripcion {
+    font-size: 90%;
+    color: #666;
+    line-height: 1.6;
+    margin: 20px 0 30px 0;
+}
+.descripcion-oscura {
+    font-size: 60%;
+    color: #555; /* Texto un poco más oscuro para fondo blanco */
+    line-height: 1.6;
+    margin: 20px 0 30px 0;
+}
+
+.titulo-seccion {
+    font-size: 90%;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.titulo-seccion.grande {
+    font-size: 300%;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 900;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* == Pantalla 1: Inicio == */
+#seccion-inicio {
+    background-color: #eaf6ff; /* Fondo azul claro */
+    justify-content: flex-start; 
+    padding: 0 60px;
+}
+.barra-navegacion {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; /* Queda arriba de esta sección */
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 60px;
+}
+.logo {
+    font-size: 100%; font-weight: 900; color: #d93a3e;
+}
+.subtitulo-logo {
+    display: block; font-size: 90%; font-weight: 500; color: #555;
+}
+.menu-principal ul {
+    display: flex; list-style: none;
+}
+.menu-principal li {
+    margin-left: 25px;
+}
+.menu-principal a {
+    text-decoration: none; color: #555; font-size: 90%; font-weight: 500;
+}
+.menu-principal a.activo, .menu-principal a:hover {
+    color: black; font-weight: 700;
+}
+
+
+
+
+
+/* Ajuste del contenido-flexible para estar debajo del header */
+#seccion-inicio .contenido-flexible {
+    margin-top: 100px; 
+}
+
+/* Círculo morado detrás del bol */
+#seccion-inicio .columna-imagen::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: #cdc9e0; 
+    border-radius:50%;
+    z-index: 1;
+    transform: translate(-10%, 3%); 
+    
+}
+.seccion-inferior-inicio {
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+}
+.seccion-inferior-inicio h2 {
+    font-size: 150%; font-weight: 700; margin-bottom: 20px;
+}
+
+
+.hojas{
+    top: auto;
+    height: 100px;
+    width: 100px;
+    top: 830px;
+    left: 0;
+    
+    display: inline-block;
+    position: absolute;
+
+}
+
+.hojas2{
+    top: auto;
+    height: 150px;
+    width: 150px;
+    top: 20px;
+    right: 0;
+    display: inline-block;
+    position: absolute;
+
+    z-index: 10;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* == Pantalla 2: Acerca de == */
+#seccion-acerca {
+    background-color: white;
+    height: 50vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* == Pantalla 3: Menú == */
+.encabezado-seccion {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+.tarjetas-menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.tarjeta-plato img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+.tarjeta-plato h3 {
+    margin-top: 15px; font-size: 18px;  /* Configuracion de texto de nombre de platos */
+}
+.tarjeta-plato .precio {
+    display: block; margin: 5px 0; color: white; /* Configuracion de texto de precios de platos */
+}
+.tarjeta-plato .enlace-comprar {
+    color: white; text-decoration: underline; font-size: 14px;
+}
+/* Configuracion de texto de enlace de platos */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* == Pantalla 4: Clientes == */
+.columna-testimonio {
+    flex: 1.2; 
+}
+.tarjeta-testimonio {
+    background: #f9f9f9; /* fondo gris claro de la tarjeta */
+    border-radius: 40px;
+    padding: 40px;
+    max-width: 450px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.tarjeta-testimonio .cita {
+    font-size: 16px; font-style: italic; color: #555; line-height: 1.7;
+}
+.tarjeta-testimonio .autor {
+    display: flex; align-items: center; margin-top: 20px;
+}
+.tarjeta-testimonio .info-autor {
+    display: flex; flex-direction: column;
+}
+.tarjeta-testimonio .info-autor strong {
+    color: #333;
+}
+.tarjeta-testimonio .info-autor span {
+    color: #007bff; 
+}
+.navegacion-flechas {
+    margin-top: 30px;
+}
+.navegacion-flechas span {
+    font-size: 30px;
+    color: #28a745; 
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.PlatoMitad{
+ 
+    height: 800px;
+    width: 400px;
+    top: 8%;
+    left: 0;
+    flex: 1;
+    display: flex;
+    justify-content: left;
+
+    position: absolute; 
+}
+
+#seccion-clientes{
+    height: 60vh;
+}
+
+.usuario{
+    position: relative; 
+    height: 100px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 15px;
+    z-index: 10;
+    
+}
+
+#seccion-clientes .usuario::before {
+    
+    content: '';
+    position: absolute;
+    width: 105px;
+    height: 101px;
+    background-color: #e0dede; 
+    border-radius:50%;
+    
+    transform: translate(25%, 9%); 
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* == Pantalla 5: Empezar == */
+.columna-formulario {
+    flex: 1;
+}
+.formulario-email {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 450px;
+}
+.formulario-email input {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+}
+.formulario-email button {
+    background: #3f2b96;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#seccion-empezar{
+    height: 40vh;
+}
+
+
+.titulo-seccion.grande2 {
+    font-size: 50px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 900;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* == Pantalla 6: Footer == */
+#seccion-footer {
+    background-color: #f8f9fa; 
+    color: #555;
+    justify-content: space-between; /* Empuja el contenido */
+    padding: 0; 
+    height: 30vh;
+}
+.footer-barra-superior {
+    height: 10px;
+   
+   
+}
+.footer-contenido-principal {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    flex-grow: 1; /* Ocupa el espacio central */
+    align-items: flex-start; /* Alinea las columnas arriba */
+}
+.columna-footer {
+    flex: 1;
+    padding: 0 20px;
+    font-size: 14px;
+}
+.columna-footer h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+}
+.columna-footer ul {
+    list-style: none;
+    padding: 0;
+}
+.columna-footer li {
+    margin-bottom: 10px;
+}
+.columna-footer a {
+    text-decoration: none;
+    color: #555;
+}
+.columna-footer a:hover {
+    text-decoration: underline;  /* Subrayar cuando colocamos el cursor sobre el enlace */
+}
+
+
+/* Barra Pequeña abajo de el todo */
+.footer-barra-inferior {
+    width: 100%;
+    background-color: #eaeaea; 
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+.enlaces-legales a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 15px; /* márgenes entre cada enlace hacia la izquierda */
+}
+.enlaces-legales a:hover {
+    text-decoration: underline; /* Subrayar cuando colocamos el cursor sobre el enlace */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
