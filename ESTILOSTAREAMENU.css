@@ -13,9 +13,9 @@ body {
 .contenedor-principal {
     scroll-snap-type: y mandatory;
 
-    /* OBLIGATORIO: Le da la altura de la ventana y permite scroll */
+  
     height: 100vh;
-    overflow-y: scroll; 
+    overflow-y: scroll; /* Hacer que solo pueda existir un div con clase pantalla a la vez*/ 
 }
 
 .pantalla {
@@ -28,22 +28,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 60px; /* Espacio interno */
+    padding: 40px 60px; 
     position: relative; /* Para posicionar elementos internos */
 }
 
-/* --- 2. Estilos Comunes (Botones, Títulos, Fondos) --- */
+/*  2. Estilos Comunes (Botones, Títulos, Fondos) */
 
 .seccion-oscura {
-    background-color: #5f60b3; /* Morado principal */
+    background-color: #5f60b3; 
     color: white;
     height: 50vh;
 }
 .seccion-oscura .descripcion-oscura,
 .seccion-oscura .titulo-seccion,
 .seccion-oscura .titulo-script {
-    color: white; /* Asegura que el texto sea blanco en fondos oscuros */
+    color: white;
 }
+
+
 
 .boton {
     display: inline-block;
@@ -87,13 +89,32 @@ body {
     align-items: center;
     position: relative; 
 }
+
+
+
+.columna-imagen{
+  
+    cursor: pointer;
+}
+
+
+.columna-imagen:hover {
+    transform: scale(1.02); 
+}
+
+
+
 .columna-imagen img {
-    width: 100%;
+    width: 150%;
     max-width: 400px;
     border-radius: 50%;
     position: relative;
     z-index: 2;
+    
 }
+
+
+
 
 /* Títulos */
 .titulo-script {
@@ -204,7 +225,16 @@ body {
 }
 
 
+.logo{
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+}
 
+
+.logo:hover {
+    transform: scale(1.02); 
+}
 
 
 /* Ajuste del contenido-flexible para estar debajo del header */
@@ -337,12 +367,26 @@ body {
 }
 
 
+
+
+
 .tarjeta-plato img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     position: relative;
     z-index: 2;
+}
+
+
+.tarjeta-plato{
+    
+    cursor: pointer;
+}
+
+
+.tarjeta-plato:hover {
+    transform: scale(1.02); 
 }
 .tarjeta-plato h3 {
     margin-top: 15px; font-size: 18px;  /* Configuracion de texto de nombre de platos */
@@ -420,7 +464,7 @@ body {
 
 .PlatoMitad{
  
-    height: 600px;
+    height: 400px;
     width: 200px;
     top: 5%;
     left: 0;
@@ -442,6 +486,21 @@ body {
     border-radius: 50%;
     margin-left: 15px;
     z-index: 10;
+    
+}
+
+
+
+.ensalandasinfondo{
+    height: 300px;
+    width: 300px;
+    top: 5%;
+    right: 0;
+    flex: 1;
+    display: flex;
+    justify-content: left;
+
+    position: relative;
     
 }
 
